@@ -1,5 +1,7 @@
 # FlappyNumbers
 
+http://MCatherine1994.github.io/FlappyNumbers/
+
 ### Tutorial
 Simple start tutorial: https://www.w3schools.com/graphics/game_intro.asp  
 Full screen: https://h3manth.com/content/html5-canvas-full-screen-and-full-page
