@@ -2,7 +2,7 @@ var myGamePiece;
 
 function startGame() {
     myGameArea.start();
-    myGamePiece = new component("red", 20);
+    myGamePiece = new component(30, 30, "red", 10, 120);
 }
 
 var myGameArea = {
@@ -19,17 +19,17 @@ var myGameArea = {
     }
 }
 
-function component(color, size) {
-    this.size = size;
-    this.update = function() {
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;    
+    this.update = function(){
         ctx = myGameArea.context;
         ctx.fillStyle = color;
-        ctx.beginPath();
-        ctx.arc(20, 120, size, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
-
 function updateGameArea() {
     myGameArea.clear();
     myGamePiece.update();
