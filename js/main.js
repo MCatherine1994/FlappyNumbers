@@ -28,12 +28,13 @@ function component(width, height, color, x, y) {
         ctx = myGameArea.context;
         ctx.beginPath();
         ctx.fillStyle = color;
-        ctx.arc(100, 50, 20, 0, 2 * Math.PI);
+        ctx.arc(20, 120, 20, 0, 2 * Math.PI);
         ctx.fill();
     }
 }
 
 function updateGameArea() {
     myGameArea.clear();
+    myGamePiece.x += 1;
     myGamePiece.update();
 }
