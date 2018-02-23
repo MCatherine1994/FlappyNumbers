@@ -24,12 +24,10 @@ function component(width, height, color, x, y) {
     this.height = height;
     this.x = x;
     this.y = y;    
-    this.update = function(){
+     this.update = function(){
         ctx = myGameArea.context;
-        ctx.beginPath();
         ctx.fillStyle = color;
-        ctx.arc(20, 120, 20, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
 
