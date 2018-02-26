@@ -15,8 +15,7 @@ Html preview: http://htmlpreview.github.io/
 2. Clone it locally on your machine  
 3. Create a gh-pages branch (if one already exists, remove it and create a new one based off master)  
 4. Push the branch back to GitHub  
-5. View the pages at http://username.github.io/repo` 
-  
+5. View the pages at http://username.github.io/repo     
 In code:  
 git clone git@github.com:username/repo.git  
 cd repo  
