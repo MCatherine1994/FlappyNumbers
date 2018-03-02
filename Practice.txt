@@ -1,0 +1,19 @@
+Successful: (if the row is selected, enable the buttom)
+
+if($('.row-selector').is(':checked'))
+$('#LateOn').removeClass('apex_disabled');
+
+if(!$('.row-selector').is(':checked'))
+$('#Delete').addClass('apex_disabled');
+
+--LateOn and Delete are the static ID for the button
+
+
+if($('.row-selector').is(':checked'))
+$('#LATE_ON_CHECKED').removeClass('apex_disabled');
+
+if(!$('.row-selector').is(':checked'))
+$('#LATE_ON_CHECKED').addClass('apex_disabled');
+
+if($('.row-selector').is(':checked'))
+$('#RELEASED_CHECKED').removeClass('apex_disabled');
