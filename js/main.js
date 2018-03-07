@@ -1,8 +1,8 @@
 var myGamePiece;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
     myGameArea.start();
+    myGamePiece = new component(30, 30, "red", 10, 120);
 }
 
 var myGameArea = {
@@ -43,7 +43,7 @@ function component(width, height, color, x, y) {
     }
     this.newPos = function(){
         this.x +=this.speedX;
-        this.y = this.speedY;
+        this.y += this.speedY;
     }
 }
 
