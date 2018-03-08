@@ -19,10 +19,10 @@ var myGameArea = {
         //run the updateGameArea every 20th millisecond (50 times per second)
         this.interval = setInterval(updateGameArea, 20);
         //check if the a key is pressed, and set the key property of the myGameArea to the key code. When the key is released, set teh key property to false
-        window.addEventListener('keydown', function(e){
+        window.addEventListener('keydown', function(e) {
             myGameArea.key = e.keyCode;
         })
-        window.addEventListener('keyup', function(e){
+        window.addEventListener('keyup', function(e) {
             myGameArea.key = false;
         })
     },
