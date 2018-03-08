@@ -35,7 +35,7 @@ var myGameArea = {
 }
 
 function component(width, height, color, x, y){
-    //this.gamearea = myGameArea;
+    this.gamearea = myGameArea;
     this.width = width;
     this.height = height;
     //component controller speedX and speedY -- speed indicators
@@ -72,7 +72,7 @@ function component(width, height, color, x, y){
 
 function updateGameArea(){
     var x, y;
-    for (i = 0; i < myObstacles.length; i += 1){
+    for(i = 0; i < myObstacles.length; i += 1){
         if (myGamePiece.crashWith(myObstacles[i])){
             myGameArea.stop();
             return;
@@ -80,25 +80,24 @@ function updateGameArea(){
     }
     myGameArea.clear();
     myGameArea.frameNo += 1;
-    if (myGameArea.frameNo == 1 || everyinterval(150)){
+    if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
         y = myGameArea.canvas.height - 200;
         myObstacles.push(new component(10, 200, "green", x, y));
     }
-    for (i = 0; i < myObstacles.length; i += 1){
+    for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1;
         myObstacles[i].update();
     } 
-    if (myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1; }
-    if (myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1; }
-    if (myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1; }
-    if (myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1; }
+    if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
+    if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
+    if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
+    if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
     myGamePiece.newPos();
     myGamePiece.update();
-    }
 }
 
-function everyinterval(n) {
-    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+function everyinterval(n){
+    if((myGameArea.frameNo / n) % 1 == 0){return true;}
     return false;
 } 
