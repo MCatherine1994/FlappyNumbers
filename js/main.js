@@ -2,8 +2,8 @@ var myGamePiece;
 var myObstacle = [];
 
 function startGame(){
-    myGameArea.start();
     myGamePiece = new component(30, 30, "red", 10, 120);
+    myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
 
@@ -35,7 +35,7 @@ var myGameArea = {
 }
 
 function component(width, height, color, x, y){
-    this.gamearea = myGameArea;
+    //this.gamearea = myGameArea;
     this.width = width;
     this.height = height;
     //component controller speedX and speedY -- speed indicators
@@ -101,4 +101,4 @@ function updateGameArea(){
 function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
-}
+} 
