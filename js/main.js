@@ -1,5 +1,5 @@
 var myGamePiece;
-var myObstacle = [];
+var myObstacles = [];
 
 function startGame(){
     myGamePiece = new component(30, 30, "red", 10, 120);
@@ -19,41 +19,41 @@ var myGameArea = {
         //run the updateGameArea every 20th millisecond (50 times per second)
         this.interval = setInterval(updateGameArea, 20);
         //check if the a key is pressed, and set the key property of the myGameArea to the key code. When the key is released, set teh key property to false
-        window.addEventListener('keydown', function(e) {
+        window.addEventListener('keydown', function (e) {
             myGameArea.key = e.keyCode;
         })
-        window.addEventListener('keyup', function(e) {
+        window.addEventListener('keyup', function (e) {
             myGameArea.key = false;
         })
     },
-    clear : function(){
+    clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
-    stop : function(){
+    stop : function() {
         clearInterval(this.interval);
-    }
+    } 
 }
 
 function component(width, height, color, x, y){
-    this.gamearea = myGameArea;
+    //this.gamearea = myGameArea;
     this.width = width;
     this.height = height;
     //component controller speedX and speedY -- speed indicators
     this.speedX = 0;
-    this.speedY = 0;
+    this.speedY = 0;    
     this.x = x;
-    this.y = y;    
-    this.update = function(){
+    this.y = y;   
+    this.update = function() {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
     //use speedX and speedY o change the component's position
-    this.newPos = function(){
-        this.x +=this.speedX;
-        this.y += this.speedY;
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
     }
-    this.crashWith = function(otherobj){
+    this.crashWith = function(otherobj) {
         var myleft = this.x;
         var myright = this.x + (this.width);
         var mytop = this.y;
@@ -63,17 +63,17 @@ function component(width, height, color, x, y){
         var othertop = otherobj.y;
         var otherbottom = otherobj.y + (otherobj.height);
         var crash = true;
-        if((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)){
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
             crash = false;
         }
         return crash;
-    }    
+    }  
 }
 
 function updateGameArea(){
     var x, y;
     for(i = 0; i < myObstacles.length; i += 1){
-        if (myGamePiece.crashWith(myObstacles[i])){
+        if(myGamePiece.crashWith(myObstacles[i])){
             myGameArea.stop();
             return;
         } 
@@ -88,16 +88,18 @@ function updateGameArea(){
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1;
         myObstacles[i].update();
-    } 
+    }
+    myGamePiece.speedX = 0;
+    myGamePiece.speedY = 0;
     if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
     if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
     if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
-    myGamePiece.newPos();
+    myGamePiece.newPos();    
     myGamePiece.update();
 }
 
-function everyinterval(n){
-    if((myGameArea.frameNo / n) % 1 == 0){return true;}
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
 } 
