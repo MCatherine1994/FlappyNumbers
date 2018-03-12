@@ -1,4 +1,5 @@
 var myGamePiece;
+var myBackground;
 var myObstacles = [];
 
 var myGameArea = {
@@ -27,12 +28,18 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    myGamePiece = new component(80, 80, "img/fish0.png", 10, 120, "image");
+    myBackground = new component(1400, 600, "img/bg.jpg", 0, 0, "image");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
 
-function component(width, height, color, x, y){
+function component(width, height, color, x, y, type){
+    this.type = type;
+    if (type == "image") {
+        this.image = new Image();
+        this.image.src = color;
+    }
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -41,8 +48,15 @@ function component(width, height, color, x, y){
     this.y = y;    
     this.update = function(){
         ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+        if (type == "image") {
+            ctx.drawImage(this.image, 
+                this.x, 
+                this.y,
+                this.width, this.height);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
     }
     this.newPos = function(){
         this.x += this.speedX;
@@ -74,6 +88,9 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
+    //myBackground.speedX = -1; 
+    myBackground.newPos(); 
+    myBackground.update();
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
