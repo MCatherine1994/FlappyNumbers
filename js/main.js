@@ -29,14 +29,14 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 10, 120, "image");
-    myBackground = new component(1400, 600, "img/bg.jpg", 0, 0, "image");
+    myBackground = new component(1500, 800, "img/bg.jpg", 0, 0, "image");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
 
 function component(width, height, color, x, y, type){
     this.type = type;
-    if (type == "image") {
+    if (type == "image" || type == "background") {
         this.image = new Image();
         this.image.src = color;
     }
@@ -49,18 +49,22 @@ function component(width, height, color, x, y, type){
     this.update = function(){
         ctx = myGameArea.context;
         if (type == "image") {
-            ctx.drawImage(this.image, 
-                this.x, 
-                this.y,
-                this.width, this.height);
-        } else {
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        }else if(type == "background"){
+            ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+        }else{
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
     }
     this.newPos = function(){
         this.x += this.speedX;
-        this.y += this.speedY;        
+        this.y += this.speedY;
+        if (this.type == "background") {
+            if (this.x == -(this.width)) {
+                this.x = 0;
+            }
+        }
     }    
     this.crashWith = function(otherobj){
         var myleft = this.x;
