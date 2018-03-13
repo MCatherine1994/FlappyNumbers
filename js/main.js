@@ -28,8 +28,8 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(80, 80, "img/fish0.png", 10, 120, "image");
-    myBackground = new component(1500, 1000, "img/bg3.jpg", 0, 0, "image");
+    myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
+    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "image");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -51,7 +51,7 @@ function component(width, height, color, x, y, type){
         if (type == "image") {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         }else if(type == "background"){
-            ctx.drawImage(this.image, this.x + this.width, this.y, window.innerWidth, window.innerHeight);
+            ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
         }else{
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
