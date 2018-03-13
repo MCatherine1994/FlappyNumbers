@@ -94,6 +94,8 @@ function updateGameArea(){
     }
     myGameArea.clear();
     myBackground.speedX = -1;  //set the moving background
+    myBackground.newPos(); 
+    myBackground.update();
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
@@ -118,8 +120,6 @@ function updateGameArea(){
     if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
     if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
-    myBackground.newPos(); 
-    myBackground.update();
     myGamePiece.newPos();    
     myGamePiece.update();
 }
