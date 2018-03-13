@@ -29,7 +29,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 10, 120, "image");
-    myBackground = new component(1500, 800, "img/bg3.jpg", 0, 0, "image");
+    myBackground = new component(1500, 1000, "img/bg3.jpg", 0, 0, "image");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -98,16 +98,16 @@ function updateGameArea(){
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
-        //y = myGameArea.canvas.height - 200;
-        //myObstacles.push(new component(10, 200, "green", x, y));
-        minHeight = 20;
+        y = myGameArea.canvas.height - 200;
+        myObstacles.push(new component(10, 200, "green", x, y));
+/*        minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap)); */
     }
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1;
