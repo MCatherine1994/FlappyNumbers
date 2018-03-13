@@ -29,7 +29,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 10, 120, "image");
-    myBackground = new component(1500, 800, "img/bg.jpg", 0, 0, "image");
+    myBackground = new component(1500, 800, "img/bg3.jpg", 0, 0, "image");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
