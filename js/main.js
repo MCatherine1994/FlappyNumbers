@@ -51,6 +51,7 @@ function component(width, height, color, x, y, type){
         if (type == "image") {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
         }else if(type == "background"){
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
             ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
         }else{
             ctx.fillStyle = color;
