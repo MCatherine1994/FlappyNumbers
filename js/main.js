@@ -36,7 +36,7 @@ function startGame(){
 
 function component(width, height, color, x, y, type){
     this.type = type;
-    if (type == "image" || type == "background") {
+    if(type == "image" || type == "background"){
         this.image = new Image();
         this.image.src = color;
     }
@@ -48,11 +48,11 @@ function component(width, height, color, x, y, type){
     this.y = y;    
     this.update = function(){
         ctx = myGameArea.context;
-        if (type == "image") {
+        if(type == "image" || type == "background"){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-        }else if(type == "background"){
-            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-            ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+            if(type == "background"){
+                ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+            }
         }else{
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
