@@ -36,7 +36,7 @@ function startGame(){
 
 function component(width, height, color, x, y, type){
     this.type = type;
-    if(type == "image" || type == "background"){
+    if(type == "image"){// || type == "background"){
         this.image = new Image();
         this.image.src = color;
     }
@@ -50,9 +50,9 @@ function component(width, height, color, x, y, type){
         ctx = myGameArea.context;
         if(type == "image" || type == "background"){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-            if(type == "background"){
+     /*       if(type == "background"){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
-            }
+            } */
         }else{
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -61,11 +61,11 @@ function component(width, height, color, x, y, type){
     this.newPos = function(){
         this.x += this.speedX;
         this.y += this.speedY;
-        if (this.type == "background") {
+/*        if (this.type == "background") {
             if (this.x == -(this.width)) {
                 this.x = 0;
             }
-        }
+        } */
     }    
     this.crashWith = function(otherobj){
         var myleft = this.x;
