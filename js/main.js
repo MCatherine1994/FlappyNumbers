@@ -29,7 +29,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
-    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "image");
+    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -93,14 +93,11 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
-    myBackground.speedX = -1;  //set the moving background
-    myBackground.newPos(); 
-    myBackground.update();
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
-        y = myGameArea.canvas.height - 200;
-        myObstacles.push(new component(10, 200, "green", x, y));
+        y = myGameArea.canvas.height - 500;
+        myObstacles.push(new component(100, 100, "img/fish1.png", x, y, "image"));
 /*        minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
@@ -114,6 +111,9 @@ function updateGameArea(){
         myObstacles[i].x += -1;
         myObstacles[i].update();
     }
+    myBackground.speedX = -1;  //set the moving background
+    myBackground.newPos(); 
+    myBackground.update();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
