@@ -111,7 +111,7 @@ function updateGameArea(){
         myObstacles[i].x += -1;
         myObstacles[i].update();
     }
-    myBackground.speedX = -1;  //set the moving background
+//    myBackground.speedX = -1;  //set the moving background
     myBackground.newPos(); 
     myBackground.update();
     myGamePiece.speedX = 0;
