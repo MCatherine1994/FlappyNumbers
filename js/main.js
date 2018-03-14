@@ -29,14 +29,14 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
-    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "image");
+    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
 
 function component(width, height, color, x, y, type){
     this.type = type;
-    if(type == "image"){// || type == "background"){
+    if(type == "image" || type == "background"){
         this.image = new Image();
         this.image.src = color;
     }
@@ -48,7 +48,7 @@ function component(width, height, color, x, y, type){
     this.y = y;    
     this.update = function(){
         ctx = myGameArea.context;
-        if(type == "image"){ //|| type == "background"){
+        if(type == "image" || type == "background"){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
      /*       if(type == "background"){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
@@ -112,16 +112,16 @@ function updateGameArea(){
         myObstacles[i].update();
     }
 //    myBackground.speedX = -1;  //set the moving background
-    myBackground.newPos(); 
-    myBackground.update();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
     if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
     if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
+    myBackground.newPos(); 
+    myBackground.update();
     myGamePiece.newPos();    
-    myGamePiece.update();
+    myGamePiece.update();   
 }
 
 function everyinterval(n){
