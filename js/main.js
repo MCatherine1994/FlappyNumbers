@@ -29,7 +29,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
-    myBackground = new component(1024, 768, "img/bg3.jpg", 0, 0, "image");
+    myBackground = new component(1024, 768, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -50,9 +50,9 @@ function component(width, height, color, x, y, type){
         ctx = myGameArea.context;
         if(type == "image" || type == "background"){
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-     /*       if(type == "background"){
+            if(type == "background"){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
-            } */
+            } 
         }else{
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -61,11 +61,11 @@ function component(width, height, color, x, y, type){
     this.newPos = function(){
         this.x += this.speedX;
         this.y += this.speedY;
-/*        if (this.type == "background") {
+        if (this.type == "background") {
             if (this.x == -(this.width)) {
                 this.x = 0;
             }
-        } */
+        } 
     }    
     this.crashWith = function(otherobj){
         var myleft = this.x;
@@ -93,6 +93,9 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
+    myBackground.speedX = -1;  //set the moving background
+    myBackground.newPos(); 
+    myBackground.update();
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
@@ -111,15 +114,12 @@ function updateGameArea(){
         myObstacles[i].x += -1;
         myObstacles[i].update();
     }
-//    myBackground.speedX = -1;  //set the moving background
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
     if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
     if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
     if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
-    myBackground.newPos(); 
-    myBackground.update();
     myGamePiece.newPos();    
     myGamePiece.update();   
 }
