@@ -9,6 +9,9 @@ http://MCatherine1994.github.io/FlappyNumbers/
 [Meta tag](https://www.w3schools.com/tags/tag_meta.asp)  
 [Html preview](http://htmlpreview.github.io/): Preview your website  
 [Background size resolution](https://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723)  
+How to Learn the Phaser HTML5 Game Engine: https://gamedevelopment.tutsplus.com/articles/how-to-learn-the-phaser-html5-game-engine--gamedev-13643  
+The Complete Guide to Building HTML5 Games with Canvas & SVG: https://www.htmlgoodies.com/html5/client/the-complete-guide-to-building-html5-games-with-canvas-svg.html  
+How to Make Flappy Bird in HTML5 With Phaser: http://www.lessmilk.com/tutorial/flappy-bird-phaser-1  
 
 ### Note  
 #### How to get the URL of the html file:   
