@@ -29,7 +29,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
-    myBackground = new component(1024, 768, "img/bg3.jpg", 0, 0, "background");
+    myBackground = new component(2048, 1536, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -99,7 +99,7 @@ function updateGameArea(){
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
-        y = myGameArea.canvas.height - 200;
+        y = myGameArea.canvas.height - 100;
         myObstacles.push(new component(100, 100, "img/fish1.png", x, y, "image"));
 /*        minHeight = 20;
         maxHeight = 200;
