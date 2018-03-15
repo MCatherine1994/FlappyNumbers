@@ -3,12 +3,12 @@
 http://MCatherine1994.github.io/FlappyNumbers/
 
 ### Tutorial
-Simple start tutorial: https://www.w3schools.com/graphics/game_intro.asp  
-Full screen: https://h3manth.com/content/html5-canvas-full-screen-and-full-page  
-Step by step tutorial: https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript  
-Meta tag: https://www.w3schools.com/tags/tag_meta.asp  
-Html preview: http://htmlpreview.github.io/  
-Background size resolution: https://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723
+[Simple start tutorial](https://www.w3schools.com/graphics/game_intro.asp)   
+[Full screen](https://h3manth.com/content/html5-canvas-full-screen-and-full-page): Have a full screen game area  
+[Step by step tutorial](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)  
+[Meta tag](https://www.w3schools.com/tags/tag_meta.asp)  
+[Html preview](http://htmlpreview.github.io/): Preview your website  
+[Background size resolution](https://gamedevelopment.tutsplus.com/articles/quick-tip-what-is-the-best-screen-resolution-for-your-game--gamedev-14723)  
 
 ### Note  
 #### How to get the URL of the html file:   
