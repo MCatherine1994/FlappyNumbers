@@ -103,7 +103,7 @@ function updateGameArea(){
         var z = num.toString(Math.floor((Math.random() * 5) + 1));
         var str1 = "img/fish";
         var str2 = str1.concat(z);
-        var str3 = str2.concat(".png")
+        var str3 = str2.concat(".png");
         myObstacles.push(new component(100, 100, str3, x, y, "image"));
         /*minHeight = 20;
         maxHeight = 200;
