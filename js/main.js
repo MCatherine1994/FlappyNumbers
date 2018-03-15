@@ -97,7 +97,8 @@ function updateGameArea(){
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
         y = myGameArea.canvas.height - 200;
-        myObstacles.push(new component(100, 100, "img/fish1.png", x, y, "image"));
+        //myObstacles.push(new component(100, 100, "img/fish1.png", x, y, "image"));
+        myObstacles.push(new component(100, 100, "green", x, y));
 /*        minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
