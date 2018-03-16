@@ -100,7 +100,7 @@ function updateGameArea(){
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
         y = myGameArea.canvas.height - 300;
-        var num = Math.floor((Math.random() * 5) + 1);
+        var num = Math.floor((Math.random() * 12) + 1);
         var z = num.toString();
         var str1 = "img/fish";
         var str2 = str1.concat(z);
