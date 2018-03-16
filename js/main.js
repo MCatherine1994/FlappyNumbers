@@ -93,7 +93,7 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
-    myBackground.speedX = -1;  //set the moving background
+//    myBackground.speedX = -1;  //set the moving background
     myBackground.newPos(); 
     myBackground.update();
     myGameArea.frameNo += 1;
