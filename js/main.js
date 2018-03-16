@@ -118,15 +118,15 @@ function updateGameArea(){
         myObstacles.push(new component(80, 80, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
-        myObstacles[i].x += -1;
+        myObstacles[i].x += -2;
         myObstacles[i].update();
     }
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
-    if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
-    if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
-    if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
+    if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -2;}
+    if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 2;}
+    if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -2;}
+    if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 2;}
     myGamePiece.newPos();    
     myGamePiece.update();   
 }
