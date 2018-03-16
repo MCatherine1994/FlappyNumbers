@@ -28,7 +28,7 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(80, 80, "img/fish0.png", 300, 300, "image");
+    myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
     myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
@@ -111,11 +111,12 @@ function updateGameArea(){
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
         minGap = 50;
         maxGap = 300;
-        //var ran = Math.floor((Math.random() * 100) + 1);
+        var ran1 = Math.floor((Math.random() * 500) + 1);
+        var ran2 = Math.floor((Math.random() * 500) + 1);
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         //myObstacles.push(new component(80, 80, str3, x+ran, gap, "image"));
-        myObstacles.push(new component(80, 80, str3, x+gap, height + gap, "image"));  
-        myObstacles.push(new component(80, 80, str3, x, height - gap, "image")); 
+        myObstacles.push(new component(ran1, ran1, str3, x+gap, height + gap, "image"));  
+        myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -2;
