@@ -105,15 +105,15 @@ function updateGameArea(){
         var str1 = "img/fish";
         var str2 = str1.concat(z);
         var str3 = str2.concat(".png");
-        myObstacles.push(new component(100, 100, str3, x, y, "image"));
-        /*minHeight = 20;
+        //myObstacles.push(new component(100, 100, str3, x, y, "image"));
+        minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));  */
+        myObstacles.push(new component(100, 100, str3, x, 0, "image"));
+        myObstacles.push(new component(100, 100, str3, x, height + gap, "image"));  
     }
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1;
