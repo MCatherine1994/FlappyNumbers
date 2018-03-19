@@ -1,6 +1,7 @@
 var myGamePiece;
 var myBackground;
 var myObstacles = [];
+var mySize;
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
