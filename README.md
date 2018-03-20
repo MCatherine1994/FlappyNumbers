@@ -29,3 +29,8 @@ git branch gh-pages
 git push -u origin gh-pages  
 Go to http://username.github.io/repo
 ```  
+
+### Ideas  
+1.Size of enemy fishes should depend on the size of my fish  
+2.If hit the fish whose size is smaller the my fish, then eat it and then increase the value  
+...... More to update  
