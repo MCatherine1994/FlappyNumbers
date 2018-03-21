@@ -33,7 +33,7 @@ Go to http://username.github.io/repo
 ### Ideas  
 1.Size of enemy fishes should depend on the size of my fish  
 2.Assign a fixed size and value to a certain type of fish  
-3.If hit the fish whose size is smaller the my fish, then eat it and then increase the value  
+3.If hit the fish whose size is smaller than my fish, then eat it and then increase the value  
 4.My fish size value start from 60. Eat 5 fish, then value and size increase 1    
 5.When size value increase to 70, eat 8 fish, then value and size increase 1  
 6.When size value increase to 80, eat 10 fish, then value and size increase 1  
