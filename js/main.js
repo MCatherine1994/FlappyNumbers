@@ -94,7 +94,7 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
-    myBackground.speedX = -1;  //set the moving background
+    myBackground.speedX = -2;  //set the moving background
     myBackground.newPos(); 
     myBackground.update();
     myGameArea.frameNo += 1;
@@ -120,15 +120,15 @@ function updateGameArea(){
         myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
-        myObstacles[i].x += -2;
+        myObstacles[i].x += -1;
         myObstacles[i].update();
     }
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -2;}
-    if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 2;}
-    if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -2;}
-    if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 2;}
+    if(myGameArea.key && myGameArea.key == 37){myGamePiece.speedX = -1;}
+    if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
+    if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
+    if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
     myGamePiece.newPos();    
     myGamePiece.update();   
 }
