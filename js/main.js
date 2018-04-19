@@ -94,7 +94,7 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
-    myBackground.speedX = -2;  //set the moving background
+    myBackground.speedX = -2;  //set the moving background, this speed need to be slower than the fisheres' speed
     myBackground.newPos(); 
     myBackground.update();
     myGameArea.frameNo += 1;
@@ -120,7 +120,7 @@ function updateGameArea(){
         myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
-        myObstacles[i].x += -1;
+        myObstacles[i].x += -3;
         myObstacles[i].update();
     }
     myGamePiece.speedX = 0;
