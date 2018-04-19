@@ -1,3 +1,5 @@
+Notes for enabling the buttion for the oracle application express application
+
 Successful: (if the row is selected, enable the buttom)
 
 if($('.row-selector').is(':checked'))
