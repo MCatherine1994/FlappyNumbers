@@ -40,3 +40,6 @@ Go to http://username.github.io/repo
 7.When size value increase to 90, eat 12 fish, then value and size increase 1  
 8.When size value increase to 100, then win the game
 ...... More to update  
+
+### More ideas  
+Draw a  circle block with a certain color. Eat the same color ball to grow up. Group up to a certain level, color changed.  
