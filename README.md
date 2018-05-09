@@ -30,16 +30,6 @@ git push -u origin gh-pages
 Go to http://username.github.io/repo
 ```  
 
-### Ideas  
-1.Size of enemy fishes should depend on the size of my fish  
-2.Assign a fixed size and value to a certain type of fish  
-3.If hit the fish whose size is smaller than my fish, then eat it and then increase the value  
-4.My fish size value start from 60. Eat 5 fish, then value and size increase 1    
-5.When size value increase to 70, eat 8 fish, then value and size increase 1  
-6.When size value increase to 80, eat 10 fish, then value and size increase 1  
-7.When size value increase to 90, eat 12 fish, then value and size increase 1  
-8.When size value increase to 100, then win the game
-...... More to update  
-
-### More ideas  
-Draw a  circle block with a certain color. Eat the same color ball to grow up. Group up to a certain level, color changed.  
+### How to play  
+With the starting number, try to reach the goal number by hitting the correct opeartors and numbers, avoiding the incorrect ones.  
+ 
