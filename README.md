@@ -32,4 +32,7 @@ Go to http://username.github.io/repo
 
 ### How to play  
 With the starting number, try to reach the goal number by hitting the correct opeartors and numbers, avoiding the incorrect ones.  
+
+### Problem so far  
+How to draw a number on a square  
  
