@@ -13,7 +13,7 @@ How to Learn the Phaser HTML5 Game Engine: https://gamedevelopment.tutsplus.com/
 The Complete Guide to Building HTML5 Games with Canvas & SVG: https://www.htmlgoodies.com/html5/client/the-complete-guide-to-building-html5-games-with-canvas-svg.html  
 How to Make Flappy Bird in HTML5 With Phaser: http://www.lessmilk.com/tutorial/flappy-bird-phaser-1  
 
-### Note  
+### Notes  
 #### How to get the URL of the html file:   
 1. Fork the repository to your account 
 2. Clone it locally on your machine  
