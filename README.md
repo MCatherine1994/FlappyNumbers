@@ -29,6 +29,26 @@ git branch gh-pages
 git push -u origin gh-pages  
 Go to http://username.github.io/repo
 ```  
+#### Keys to drawing a rectangle around text  
+```
+// get references to canvas and context
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+var fontsize = 14;
+var fontface = 'verdana';
+var lineHeight = fontsize * 1.286;    // approximation of the height
+var text = 'Draw a rectangle around me.';
+
+ctx.font = fontsize + 'px ' + fontface;
+var textWidth = ctx.measureText(text).width;
+
+ctx.textAlign = 'left'; // this is the default to align horizontally to the left
+ctx.textBaseline = 'top';  // text will be aligned vertically to the top
+
+ctx.fillText(text, 20, 50);
+ctx.strokeRect(20, 50, textWidth, lineHeight);
+```  
 
 ### How to play  
 With the starting number, try to reach the goal number by hitting the correct opeartors and numbers, avoiding the incorrect ones.  
