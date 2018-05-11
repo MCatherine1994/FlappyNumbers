@@ -30,6 +30,7 @@ var myGameArea = {
 
 function startGame(){
     myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
+    myTestPiece = new component(60, 60, "blue", 500, 500, "square");
     myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
@@ -55,10 +56,24 @@ function component(width, height, color, x, y, type){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
             } 
         }else{
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
-        }
+            /*ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);  */
+            var fontsize = 14;
+            var fontface = 'verdana';
+            var lineHeight = fontsize * 1.286+5;
+            var text = '8';
+
+            ctx.font = fontsize + 'px ' + fontface;
+            var textWidth = ctx.measureText(text).width+10;
+
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+
+            ctx.fillText(text, this.width, this.height);
+            ctx.strokeRect(this.width, this.height, textWidth, lineHeight);
+        }  
     }
+    
     this.newPos = function(){
         this.x += this.speedX;
         this.y += this.speedY;
@@ -68,6 +83,7 @@ function component(width, height, color, x, y, type){
             }
         } 
     }    
+    
     this.crashWith = function(otherobj){
         var myleft = this.x;
         var myright = this.x + (this.width);
