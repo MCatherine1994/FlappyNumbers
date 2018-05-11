@@ -31,7 +31,7 @@ var myGameArea = {
 function startGame(){
     myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
     myTestPiece = new component(60, 60, "blue", 500, 500, "square");
-    myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
+    //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     //myObstacle = new component(20, 20, "green", 300, 120);
 }
@@ -110,9 +110,9 @@ function updateGameArea(){
         } 
     }
     myGameArea.clear();
-    myBackground.speedX = -1.2;  //set the moving background, this speed need to be slower than the fisheres' speed
-    myBackground.newPos(); 
-    myBackground.update();
+    //myBackground.speedX = -1.2;  //set the moving background, this speed need to be slower than the fisheres' speed
+    //myBackground.newPos(); 
+    //myBackground.update();
     myGameArea.frameNo += 1;
     if(myGameArea.frameNo == 1 || everyinterval(150)){
         x = myGameArea.canvas.width;
