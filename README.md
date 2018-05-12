@@ -50,6 +50,10 @@ ctx.fillText(text, 20, 50);
 ctx.strokeRect(20, 50, textWidth, lineHeight);
 ```  
 
+#### Javascript  
+getContext("2d") -- build-in object, with methods and properties for drawing  
+component -- object constructor  
+
 ### How to play  
 With the starting number, try to reach the goal number by hitting the correct opeartors and numbers, avoiding the incorrect ones.  
 
