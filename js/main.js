@@ -30,8 +30,8 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(60, 60, "red", 300, 300, "square"); //new component(60, 60, "img/fish0.png", 300, 300, "image");
-    myTestPiece = new component(60, 60, "blue", 500, 500, "square");
+    myGamePiece = new component(60, 60, "red", 300, 300, "square"); 
+    //myTestPiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
     //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     myObstacle = new component(20, 20, "green", 300, 120, "square");
@@ -57,9 +57,9 @@ function component(width, height, color, x, y, type){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
             } 
         }else{ 
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);  
-            /*var fontsize = 14;
+            /*ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);  */
+            var fontsize = 14;
             var fontface = 'verdana';
             var lineHeight = fontsize * 1.286+5;
             var text = '8';
@@ -71,7 +71,7 @@ function component(width, height, color, x, y, type){
             ctx.textBaseline = 'top';
 
             ctx.fillText(text, this.width, this.height);
-            ctx.strokeRect(this.width, this.height, textWidth, lineHeight); */
+            ctx.strokeRect(this.width, this.height, textWidth, lineHeight); 
         }  
     }
     
@@ -133,8 +133,8 @@ function updateGameArea(){
         var ran2 = Math.floor((Math.random() * 100) + 30);
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         //myObstacles.push(new component(80, 80, str3, x+ran, gap, "image"));
-        myObstacles.push(new component(ran1, ran1, "green", x+gap, height + gap, "square"));  
-        //myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
+        myObstacles.push(new component(ran1, ran1, str3, x+gap, height + gap, "image"));  
+        myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1.5;
