@@ -30,11 +30,11 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
+    myGamePiece = new component(60, 60, "red", 300, 300, "square"); //new component(60, 60, "img/fish0.png", 300, 300, "image");
     myTestPiece = new component(60, 60, "blue", 500, 500, "square");
     //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
-    myObstacle = new component(20, 20, "green", 300, 120);
+    myObstacle = new component(20, 20, "green", 300, 120, "square");
 }  
 
 function component(width, height, color, x, y, type){
@@ -133,8 +133,8 @@ function updateGameArea(){
         var ran2 = Math.floor((Math.random() * 100) + 30);
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         //myObstacles.push(new component(80, 80, str3, x+ran, gap, "image"));
-        myObstacles.push(new component(ran1, ran1, str3, x+gap, height + gap, "image"));  
-        myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
+        myObstacles.push(new component(ran1, ran1, "green", x+gap, height + gap, "square"));  
+        //myObstacles.push(new component(ran2, ran2, str3, x, height - gap, "image")); 
     }
     for(i = 0; i < myObstacles.length; i += 1){
         myObstacles[i].x += -1.5;
