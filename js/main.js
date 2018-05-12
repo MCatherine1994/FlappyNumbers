@@ -150,8 +150,8 @@ function updateGameArea(){
     myGamePiece.update();   
 }  
 
-/*function everyinterval(n){
+function everyinterval(n){
     if((myGameArea.frameNo / n) % 1 == 0){return true;}
     return false;
-}  */
+}  
 
