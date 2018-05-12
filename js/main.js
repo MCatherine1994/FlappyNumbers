@@ -57,9 +57,9 @@ function component(width, height, color, x, y, type){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
             } 
         }else{ 
-            /*ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);  */
-            var fontsize = 14;
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);  
+            /*var fontsize = 14;
             var fontface = 'verdana';
             var lineHeight = fontsize * 1.286+5;
             var text = '8';
@@ -71,7 +71,7 @@ function component(width, height, color, x, y, type){
             ctx.textBaseline = 'top';
 
             ctx.fillText(text, this.width, this.height);
-            ctx.strokeRect(this.width, this.height, textWidth, lineHeight);
+            ctx.strokeRect(this.width, this.height, textWidth, lineHeight); */
         }  
     }
     
