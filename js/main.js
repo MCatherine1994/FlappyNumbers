@@ -2,13 +2,14 @@ var myGamePiece;
 var myBackground;
 var myObstacles = [];
 var mySize;
+var myTestPiece;
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function(){
         this.canvas.width = window.innerWidth; //set the gaming area to the whole window
         this.canvas.height = window.innerHeight; 
-        this.context = this.canvas.getContext("2d");
+        this.context = this.canvas.getContext("2d");  
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);  //run the updateGameArea every 20th millisecond (50 times per second)
@@ -33,15 +34,15 @@ function startGame(){
     myTestPiece = new component(60, 60, "blue", 500, 500, "square");
     //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
-    //myObstacle = new component(20, 20, "green", 300, 120);
-}
+    myObstacle = new component(20, 20, "green", 300, 120);
+}  
 
 function component(width, height, color, x, y, type){
     this.type = type;
     if(type == "image" || type == "background"){
         this.image = new Image();
         this.image.src = color;
-    }
+    }  
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -55,7 +56,7 @@ function component(width, height, color, x, y, type){
             if(type == "background"){
                 ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
             } 
-        }else{
+        }else{ 
             /*ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);  */
             var fontsize = 14;
@@ -100,7 +101,7 @@ function component(width, height, color, x, y, type){
         return crash;
     }
 }
-
+   
 function updateGameArea(){
     var x, y;
     for(i = 0; i < myObstacles.length; i += 1){
@@ -147,10 +148,10 @@ function updateGameArea(){
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
     myGamePiece.newPos();    
     myGamePiece.update();   
-}
+}  
 
-function everyinterval(n){
+/*function everyinterval(n){
     if((myGameArea.frameNo / n) % 1 == 0){return true;}
     return false;
-}
+}  */
 
