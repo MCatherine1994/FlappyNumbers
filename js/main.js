@@ -30,8 +30,8 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(60, 60, "red", 300, 300, "square"); 
-    //myTestPiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
+    myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
+    myTestPiece = new component(60, 60, "red", 300, 300, "square"); 
     //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     myObstacle = new component(20, 20, "green", 300, 120, "square");
@@ -146,6 +146,8 @@ function updateGameArea(){
     if(myGameArea.key && myGameArea.key == 39){myGamePiece.speedX = 1;}
     if(myGameArea.key && myGameArea.key == 38){myGamePiece.speedY = -1;}
     if(myGameArea.key && myGameArea.key == 40){myGamePiece.speedY = 1;}
+    myTestPiece.newPos();    
+    myTestPiece.update();
     myGamePiece.newPos();    
     myGamePiece.update();   
 }  
