@@ -62,14 +62,16 @@ function component(width, height, color, x, y, type){
             var fontsize = 14;
             var fontface = 'verdana';
             var lineHeight = fontsize * 1.286+5;
-            var text = '8';
+            var num = Math.floor((Math.random() * 100) + 1);
+            var text = num.toString();
 
             ctx.font = fontsize + 'px ' + fontface;
             var textWidth = ctx.measureText(text).width+10;
 
             ctx.textAlign = 'left';
             ctx.textBaseline = 'top';
-
+            
+            ctx.fillStyle = color;
             ctx.fillText(text, this.width, this.height);
             ctx.strokeRect(this.width, this.height, textWidth, lineHeight); 
         }  
