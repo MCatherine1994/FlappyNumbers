@@ -30,8 +30,8 @@ var myGameArea = {
 }
 
 function startGame(){
-    myGamePiece = new component(60, 60, "img/fish0.png", 300, 300, "image");
-    myTestPiece = new component(60, 60, "red", 300, 300, "square"); 
+    myGamePiece = new component(60, 60, "red", 300, 300, "square"); //new component(60, 60, "img/fish0.png", 300, 300, "image");
+    myTestPiece = new component(60, 60, "img/fish0.png", 300, 300, "image"); //new component(60, 60, "red", 300, 300, "square");
     //myBackground = new component(window.innerWidth, window.innerHeight, "img/bg3.jpg", 0, 0, "background");
     myGameArea.start();
     myObstacle = new component(20, 20, "green", 300, 120, "square");
@@ -63,7 +63,7 @@ function component(width, height, color, x, y, type){
             var fontface = 'verdana';
             var lineHeight = fontsize * 1.286+5;
             var num = Math.floor((Math.random() * 100) + 1);
-            var text = num.toString();
+            var text = '8'; //num.toString();
 
             ctx.font = fontsize + 'px ' + fontface;
             var textWidth = ctx.measureText(text).width+10;
